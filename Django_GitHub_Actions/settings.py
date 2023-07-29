@@ -16,10 +16,8 @@ environ.Env().read_env()
 SECRET_KEY = 'django-insecure-!b_ly18f2$u8q_+p@=^zokm1*0a_)%+8l57zm&v@2q(sjpl45%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 ALLOWED_HOSTS = ['django-github-actions.onrender.com']
-
 
 # Application definition
 
@@ -70,13 +68,13 @@ WSGI_APPLICATION = 'Django_GitHub_Actions.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 
     # Postgres DB in Render.com
-    # 'default': dj_database_url.parse(env('DATABASE_URL'))
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 
 }
 
